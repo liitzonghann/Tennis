@@ -4,7 +4,7 @@ namespace TennisTest
     {
         public string Score()
         {
-            throw new System.NotImplementedException();
+            return "Love All";
         }
     }
 }
