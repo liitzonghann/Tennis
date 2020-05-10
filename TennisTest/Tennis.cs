@@ -6,5 +6,10 @@ namespace TennisTest
         {
             return "Love All";
         }
+
+        public void FirstPlayerScore()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
