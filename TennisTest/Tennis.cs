@@ -2,14 +2,21 @@ namespace TennisTest
 {
     public class Tennis
     {
+        private int _firstPlayerScore;
+
         public string Score()
         {
+            if (_firstPlayerScore == 1)
+            {
+                return "Fifteen Love";
+            }
+
             return "Love All";
         }
 
         public void FirstPlayerScore()
         {
-            throw new System.NotImplementedException();
+            _firstPlayerScore++;
         }
     }
 }
