@@ -76,6 +76,14 @@ namespace TennisTest
             ScoreShouldBe("Deuce");
         }
 
+        [Fact]
+        public void FirstPlayer_Adv()
+        {
+            GivenDeuce();
+            GivenFirstPlayerScore(1);
+            ScoreShouldBe("Joey Adv");
+        }
+
         private void GivenDeuce()
         {
             GivenFirstPlayerScore(3);
