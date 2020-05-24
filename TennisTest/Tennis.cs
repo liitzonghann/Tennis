@@ -29,14 +29,11 @@ namespace TennisTest
         {
             if (IsScoreDefferent())
             {
-                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
+                if (IsReadyForGamePoint())
                 {
-                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
+                    if (IsAdv())
                     {
-                        var advPlayerName = _firstPlayerScore > _secondPlayerScore
-                            ? _firstPlayerName
-                            : _secondPlayerName;
-                        return $"{advPlayerName} Adv";
+                        return $"{AdvPlayerName()} Adv";
                     }
                 }
 
@@ -49,6 +46,24 @@ namespace TennisTest
             }
 
             return SameScore();
+        }
+
+        private bool IsReadyForGamePoint()
+        {
+            return _firstPlayerScore > 3 || _secondPlayerScore > 3;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1;
+        }
+
+        private string AdvPlayerName()
+        {
+            var advPlayerName = _firstPlayerScore > _secondPlayerScore
+                ? _firstPlayerName
+                : _secondPlayerName;
+            return advPlayerName;
         }
 
         private bool IsScoreDefferent()
