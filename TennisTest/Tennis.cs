@@ -18,17 +18,32 @@ namespace TennisTest
 
         public string Score()
         {
-            if (_firstPlayerScore != _secondPlayerScore)
+            if (IsScoreDefferent())
             {
                 return LookupScore();
             }
 
-            if (_firstPlayerScore >= 3)
+            if (IsDeuce())
             {
-                return "Deuce";
+                return Deuce();
             }
 
             return SameScore();
+        }
+
+        private bool IsScoreDefferent()
+        {
+            return _firstPlayerScore != _secondPlayerScore;
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScore >= 3;
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
         }
 
         private string SameScore()

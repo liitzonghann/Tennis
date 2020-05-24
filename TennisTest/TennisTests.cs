@@ -72,9 +72,14 @@ namespace TennisTest
         [Fact]
         public void Deuce()
         {
+            GivenDeuce();
+            ScoreShouldBe("Deuce");
+        }
+
+        private void GivenDeuce()
+        {
             GivenFirstPlayerScore(3);
             GivenSecondPlayerScore(3);
-            ScoreShouldBe("Deuce");
         }
 
         private void GivenSecondPlayerScore(int times)
