@@ -23,12 +23,12 @@ namespace TennisTest
                 return LookupScore();
             }
 
-            if (_firstPlayerScore == 1)
-            {
-                return "Fifteen All";
-            }
+            return SameScore();
+        }
 
-            return "Love All";
+        private string SameScore()
+        {
+            return $"{_lookupScore[_firstPlayerScore]} All";
         }
 
         private string LookupScore()
