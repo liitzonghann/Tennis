@@ -9,7 +9,7 @@ namespace TennisTest
 
         public TennisTests()
         {
-            _tennis = new Tennis("Joey");
+            _tennis = new Tennis("Joey", "John");
         }
 
         [Fact]

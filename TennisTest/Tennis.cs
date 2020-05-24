@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace TennisTest
@@ -16,21 +17,26 @@ namespace TennisTest
         };
 
         private int _secondPlayerScore;
+        private string _secondPlayerName;
 
-        public Tennis(string firstPlayerName)
+        public Tennis(string firstPlayerName, string secondPlayerName)
         {
             _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
         }
 
         public string Score()
         {
             if (IsScoreDefferent())
             {
-                if (_firstPlayerScore > 3)
+                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
-                    if (_firstPlayerScore - _secondPlayerScore == 1)
+                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
                     {
-                        return $"{_firstPlayerName} Adv";
+                        var advPlayerName = _firstPlayerScore > _secondPlayerScore
+                            ? _firstPlayerName
+                            : _secondPlayerName;
+                        return $"{advPlayerName} Adv";
                     }
                 }
 
