@@ -31,23 +31,23 @@ namespace TennisTest
             {
                 if (IsReadyForGamePoint())
                 {
-                    if (IsAdv())
-                    {
-                        return $"{AdvPlayerName()} Adv";
-                    }
-
-                    return $"{AdvPlayerName()} Win";
+                    return IsAdv() ? AdvScore() : WinScore();
                 }
 
                 return LookupScore();
             }
 
-            if (IsDeuce())
-            {
-                return Deuce();
-            }
+            return IsDeuce() ? Deuce() : SameScore();
+        }
 
-            return SameScore();
+        private string AdvScore()
+        {
+            return $"{AdvPlayerName()} Adv";
+        }
+
+        private string WinScore()
+        {
+            return $"{AdvPlayerName()} Win";
         }
 
         private bool IsReadyForGamePoint()
