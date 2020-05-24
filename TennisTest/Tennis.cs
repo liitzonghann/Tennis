@@ -18,9 +18,14 @@ namespace TennisTest
 
         public string Score()
         {
-            if (_secondPlayerScore > 0 || _firstPlayerScore > 0)
+            if (_firstPlayerScore != _secondPlayerScore)
             {
                 return LookupScore();
+            }
+
+            if (_firstPlayerScore == 1)
+            {
+                return "Fifteen All";
             }
 
             return "Love All";
