@@ -69,6 +69,14 @@ namespace TennisTest
             ScoreShouldBe("Thirty All");
         }
 
+        [Fact]
+        public void Deuce()
+        {
+            GivenFirstPlayerScore(3);
+            GivenSecondPlayerScore(3);
+            ScoreShouldBe("Deuce");
+        }
+
         private void GivenSecondPlayerScore(int times)
         {
             for (int i = 0; i < times; i++)
