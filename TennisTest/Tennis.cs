@@ -35,6 +35,8 @@ namespace TennisTest
                     {
                         return $"{AdvPlayerName()} Adv";
                     }
+
+                    return $"{AdvPlayerName()} Win";
                 }
 
                 return LookupScore();
