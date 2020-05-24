@@ -4,6 +4,7 @@ namespace TennisTest
 {
     public class Tennis
     {
+        private readonly string _firstPlayerName;
         private int _firstPlayerScore;
 
         private readonly Dictionary<int, string> _lookupScore = new Dictionary<int, string>()
@@ -16,10 +17,23 @@ namespace TennisTest
 
         private int _secondPlayerScore;
 
+        public Tennis(string firstPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+        }
+
         public string Score()
         {
             if (IsScoreDefferent())
             {
+                if (_firstPlayerScore > 3)
+                {
+                    if (_firstPlayerScore - _secondPlayerScore == 1)
+                    {
+                        return $"{_firstPlayerName} Adv";
+                    }
+                }
+
                 return LookupScore();
             }
 
