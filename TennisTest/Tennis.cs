@@ -23,6 +23,11 @@ namespace TennisTest
                 return LookupScore();
             }
 
+            if (_firstPlayerScore >= 3)
+            {
+                return "Deuce";
+            }
+
             return SameScore();
         }
 
