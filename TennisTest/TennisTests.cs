@@ -5,7 +5,7 @@ namespace TennisTest
 {
     public class TennisTests
     {
-        private Tennis _tennis;
+        private readonly Tennis _tennis;
 
         public TennisTests()
         {
@@ -90,6 +90,14 @@ namespace TennisTest
             GivenDeuce();
             GivenSecondPlayerScore(1);
             ScoreShouldBe("John Adv");
+        }
+
+        [Fact]
+        public void SecondPlayer_Win()
+        {
+            GivenDeuce();
+            GivenSecondPlayerScore(2);
+            ScoreShouldBe("John Win");
         }
 
         private void GivenDeuce()
