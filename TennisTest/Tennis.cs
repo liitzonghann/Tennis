@@ -17,6 +17,11 @@ namespace TennisTest
 
         public string Score()
         {
+            if (_secondPlayerScore == 2)
+            {
+                return "Love Thirty";
+            }
+
             if (_secondPlayerScore == 1)
             {
                 return "Love Fifteen";
