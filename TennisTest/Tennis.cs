@@ -1,19 +1,22 @@
+using System.Collections.Generic;
+
 namespace TennisTest
 {
     public class Tennis
     {
         private int _firstPlayerScore;
 
+        private readonly Dictionary<int, string> _lookupScore = new Dictionary<int, string>()
+        {
+            {1, "Fifteen"},
+            {2, "Thirty"}
+        };
+
         public string Score()
         {
-            if (_firstPlayerScore == 2)
+            if (_firstPlayerScore > 0)
             {
-                return "Thirty Love";
-            }
-
-            if (_firstPlayerScore == 1)
-            {
-                return "Fifteen Love";
+                return $"{_lookupScore[_firstPlayerScore]} Love";
             }
 
             return "Love All";
