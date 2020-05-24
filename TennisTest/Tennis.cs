@@ -8,6 +8,7 @@ namespace TennisTest
 
         private readonly Dictionary<int, string> _lookupScore = new Dictionary<int, string>()
         {
+            {0, "Love"},
             {1, "Fifteen"},
             {2, "Thirty"},
             {3, "Forty"},
@@ -17,22 +18,17 @@ namespace TennisTest
 
         public string Score()
         {
-            if (_secondPlayerScore == 2)
+            if (_secondPlayerScore > 0 || _firstPlayerScore > 0)
             {
-                return "Love Thirty";
-            }
-
-            if (_secondPlayerScore == 1)
-            {
-                return "Love Fifteen";
-            }
-
-            if (_firstPlayerScore > 0)
-            {
-                return $"{_lookupScore[_firstPlayerScore]} Love";
+                return LookupScore();
             }
 
             return "Love All";
+        }
+
+        private string LookupScore()
+        {
+            return $"{_lookupScore[_firstPlayerScore]} {_lookupScore[_secondPlayerScore]}";
         }
 
         public void FirstPlayerScore()
