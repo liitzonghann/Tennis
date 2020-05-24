@@ -27,5 +27,10 @@ namespace TennisTest
         {
             _firstPlayerScore++;
         }
+
+        public void SecondPlayerScore()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

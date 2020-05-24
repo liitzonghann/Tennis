@@ -39,6 +39,13 @@ namespace TennisTest
             ScoreShouldBe("Forty Love");
         }
 
+        [Fact]
+        public void Love_Fifteen()
+        {
+            _tennis.SecondPlayerScore();
+            ScoreShouldBe("Love Fifteen");
+        }
+
         private void GivenFirstPlayerScore(int times)
         {
             for (int i = 0; i < times; i++)
